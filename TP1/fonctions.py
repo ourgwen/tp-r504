@@ -1,22 +1,17 @@
 def puiss(a, b):
-    if not type(a) is int:
-        raise TypeError("Only integers are allowed")
-
-    if not type(b) is int:
+    if type(a) is not int or type(b) is not int:
         raise TypeError("Only integers are allowed")
 
     if a == 0 and b < 0:
         raise ValueError("Undefined operation")
 
-    res = 1
+    resultat = 1
 
-    if b >= 0:
-        for i in range(b):
-            res = res * a
-    else:
-        for i in range(-b):
-            res = res * a
-        res = 1 / res
+    for i in range(abs(b)):
+        resultat = resultat * a
 
-    return res
+    if b < 0:
+        resultat = 1 / resultat
+
+    return resultat
 
