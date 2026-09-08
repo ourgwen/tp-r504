@@ -8,5 +8,15 @@ def puiss(a, b):
     if a == 0 and b < 0:
         raise ValueError("Undefined operation")
 
-    return a ** b
+    res = 1
+
+    if b >= 0:
+        for i in range(b):
+            res = res * a
+    else:
+        for i in range(-b):
+            res = res * a
+        res = 1 / res
+
+    return res
 
