@@ -11,6 +11,11 @@ jobs:
       - name: Set up Python for Demo
         uses: actions/setup-python@v4
 
+      - name: Informations
+        run: |
+          echo "Nom branche : ${{ github.ref }}"
+          echo "OS : ${{ runner.os }}"
+
       - name: Install pytest
         run: pip install pytest
 
